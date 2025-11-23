@@ -136,23 +136,6 @@ public:
             }
         }
     }
-    void insert(int index, int value) {
-        if (index < 0 || index > size()) // index > size() is invalid
-            throw std::out_of_range("Index out of range");
-
-        if (index == 0) {
-            push_front(value);
-            return;
-        }
-
-        Node* ptr = head;
-        for (int i = 0; i < index - 1; i++) {
-            ptr = ptr->next;
-        }
-
-        Node* newNode = new Node(value, ptr->next);
-        ptr->next = newNode;
-    }
 
     void display() {
         if (empty()) {
